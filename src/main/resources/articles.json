@@ -1,0 +1,10 @@
+[ {
+  "productId" : 1,
+  "name" : "isopor",
+  "category" : "plastico",
+  "brand" : "isopor",
+  "price" : 230.2,
+  "quantity" : 2,
+  "freeShipping" : false,
+  "prestige" : "high"
+} ]
