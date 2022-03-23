@@ -5,6 +5,7 @@ import br.com.meli.desafio_spring.repository.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @org.springframework.stereotype.Repository
 public class ArticleRepository implements Repository<Article> {
@@ -14,5 +15,14 @@ public class ArticleRepository implements Repository<Article> {
         articles.addAll(list);
 
         return list;
+    }
+
+    @Override
+    public List<Article> listAll(String categoryName) {
+        if (categoryName != null) {
+            return articles.stream().filter(article -> article.getCategory().equalsIgnoreCase(categoryName)).collect(Collectors.toList());
+        }
+
+        return articles;
     }
 }
