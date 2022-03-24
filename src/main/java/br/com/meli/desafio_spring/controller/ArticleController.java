@@ -22,7 +22,7 @@ public class ArticleController {
     }
 
     @GetMapping("/api/v1/articles")
-    public ResponseEntity<List<ArticleDTO>> listAll(@RequestParam(required = false) String categoryName) {
-        return new ResponseEntity(articleService.listAll(categoryName), HttpStatus.OK);
+    public ResponseEntity<List<ArticleDTO>> list(@RequestParam(required = false) String category) {
+        return new ResponseEntity(articleService.list(category), HttpStatus.OK);
     }
 }

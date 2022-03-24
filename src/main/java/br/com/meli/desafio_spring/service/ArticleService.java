@@ -18,7 +18,7 @@ public class ArticleService {
         return ArticleSaveDTO.convert(articleRepository.saveAll(articles));
     }
 
-    public List<ArticleDTO> listAll(String categoryName) {
-        return ArticleDTO.convert(articleRepository.listAll(categoryName));
+    public List<ArticleDTO> list(String category) {
+        return ArticleDTO.convert(articleRepository.list(category));
     }
 }

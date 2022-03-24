@@ -18,9 +18,9 @@ public class ArticleRepository implements Repository<Article> {
     }
 
     @Override
-    public List<Article> listAll(String categoryName) {
-        if (categoryName != null) {
-            return articles.stream().filter(article -> article.getCategory().equalsIgnoreCase(categoryName)).collect(Collectors.toList());
+    public List<Article> list(String category) {
+        if (category != null) {
+            return articles.stream().filter(article -> article.getCategory().equalsIgnoreCase(category)).collect(Collectors.toList());
         }
 
         return articles;
