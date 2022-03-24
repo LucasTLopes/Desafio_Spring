@@ -1,9 +1,12 @@
 package br.com.meli.desafio_spring.controller;
 
 import br.com.meli.desafio_spring.dto.ArticleDTO;
+import br.com.meli.desafio_spring.dto.ArticlePurchaseDTO;
 import br.com.meli.desafio_spring.dto.ArticleSaveDTO;
 import br.com.meli.desafio_spring.entity.Article;
+import br.com.meli.desafio_spring.entity.Purchase;
 import br.com.meli.desafio_spring.service.ArticleService;
+import br.com.meli.desafio_spring.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +18,9 @@ import java.util.List;
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
+
+    @Autowired
+    private PurchaseService purchaseService;
 
     @PostMapping("/api/v1/insert-articles-request")
     public ResponseEntity<List<ArticleSaveDTO>> save(@RequestBody List<Article> articles) {
@@ -30,4 +36,12 @@ public class ArticleController {
             @RequestParam(required = false, value = "order") Short order) {
         return new ResponseEntity(articleService.list(category, freeShipping, product, brand, order), HttpStatus.OK);
     }
+
+    @PostMapping("/api/v1/purchase-request")
+    public ResponseEntity<Purchase> list(@RequestBody List<ArticlePurchaseDTO> articles) {
+        return new ResponseEntity(purchaseService.savePurchase(articles), HttpStatus.CREATED);
+    }
+
+
+
 }

@@ -4,5 +4,9 @@ import java.util.List;
 
 public interface Repository<T> {
     List<T> saveAll(List<T> list);
+
     List<T> list(String categoryName, Boolean freeShipping, String product, String brand, Short order);
+
+    T findById(Long id);
+
 }

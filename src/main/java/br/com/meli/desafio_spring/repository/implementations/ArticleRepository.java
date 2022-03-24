@@ -95,4 +95,11 @@ public class ArticleRepository implements Repository<Article> {
 
         return idsAlreadyExists;
     }
+
+    @Override
+    public Article findById(Long id) {
+        return articles.stream().filter(article -> article.getProductId().equals(id)).findAny().orElse(null);
+    }
+
+
 }

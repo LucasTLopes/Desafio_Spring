@@ -13,6 +13,7 @@ import java.util.List;
 
 @Service
 public class ArticleService {
+
     @Autowired
     private ArticleRepository articleRepository;
 
@@ -34,5 +35,9 @@ public class ArticleService {
 
     public List<ArticleDTO> list(String category, Boolean freeShipping, String product, String brand, Short order) {
         return ArticleDTO.convert(articleRepository.list(category, freeShipping, product, brand, order));
+    }
+
+    public Article findByID(Long id){
+        return articleRepository.findById(id);
     }
 }
