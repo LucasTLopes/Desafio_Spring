@@ -22,7 +22,12 @@ public class ArticleController {
     }
 
     @GetMapping("/api/v1/articles")
-    public ResponseEntity<List<ArticleDTO>> list(@RequestParam(required = false) String category) {
-        return new ResponseEntity(articleService.list(category), HttpStatus.OK);
+    public ResponseEntity<List<ArticleDTO>> list(
+            @RequestParam(required = false, value = "category") String category,
+            @RequestParam(required = false, value = "freeShipping") Boolean freeShipping,
+            @RequestParam(required = false, value = "product") String product,
+            @RequestParam(required = false, value = "brand") String brand,
+            @RequestParam(required = false, value = "order") Short order) {
+        return new ResponseEntity(articleService.list(category, freeShipping, product, brand, order), HttpStatus.OK);
     }
 }
