@@ -24,7 +24,8 @@ public class PurchaseService {
 
         checkOperation(articlesPurchaseDTO);
         for (ArticlePurchaseDTO a:articlesPurchaseDTO) {
-            articlesList.add(articleService.findByID(a.getProductId()));
+            Article article = articleService.findByID(a.getProductId());
+            articlesList.add(new Article(a.getProductId(), article.getName(), article.getCategory(), article.getBrand(), article.getPrice(), a.getQuantity(), article.isFreeShipping(), article.getPrestige()));
         }
 
         return new Purchase(articlesList);
@@ -41,13 +42,14 @@ public class PurchaseService {
                 listIdsError.add(a.getProductId());
                 messageError.add(" ID: " + a.getProductId() + "Nao cadastrado; ");
             }
-            if (articleService.findByID(a.getProductId()).getQuantity() > a.getQuantity()){
+            else if (articleService.findByID(a.getProductId()).getQuantity() > a.getQuantity()){
                 listIdsError.add(a.getProductId());
                 messageError.add("Quantidade para o ID: " + a.getProductId() + "invalida");
             }
         }
         if (!listIdsError.isEmpty())
-            throw new BadRequest (messageError);
+            throw new BadRequestException (messageError);
+
 
     }
 
