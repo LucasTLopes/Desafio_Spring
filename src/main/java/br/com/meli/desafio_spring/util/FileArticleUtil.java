@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileUtil implements FileInterface<Article> {
+public class FileArticleUtil implements FileInterface<Article> {
 
     public List<Article> readFromFile(String path) {
 

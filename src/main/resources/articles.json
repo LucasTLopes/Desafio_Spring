@@ -1,106 +1,7 @@
 [ {
   "productId" : 1,
-  "name" : "isopor",
-  "category" : "plastico",
-  "brand" : "isopor",
-  "price" : 230.2,
-  "quantity" : 2,
-  "freeShipping" : false,
-  "prestige" : "high"
-}, {
-  "productId" : 1,
   "name" : "Serra de Bancada",
-  "category" : "Pedra",
-  "brand" : "FORTGPRO",
-  "price" : 1800.0,
-  "quantity" : 5,
-  "freeShipping" : true,
-  "prestige" : "****"
-}, {
-  "productId" : 2,
-  "name" : "Furadeira",
   "category" : "Ferramentas",
-  "brand" : "Black & Decker",
-  "price" : 500.0,
-  "quantity" : 7,
-  "freeShipping" : false,
-  "prestige" : "****"
-}, {
-  "productId" : 3,
-  "name" : "Serra",
-  "category" : "Pedra",
-  "brand" : "FORTGPRO",
-  "price" : 1000.0,
-  "quantity" : 5,
-  "freeShipping" : true,
-  "prestige" : "****"
-}, {
-  "productId" : 4,
-  "name" : "Parafusadeira",
-  "category" : "Ferramentas",
-  "brand" : "Black & Decker",
-  "price" : 500.0,
-  "quantity" : 7,
-  "freeShipping" : false,
-  "prestige" : "****"
-}, {
-  "productId" : 5,
-  "name" : "Serra",
-  "category" : "Pedra",
-  "brand" : "Bosch",
-  "price" : 1000.0,
-  "quantity" : 5,
-  "freeShipping" : true,
-  "prestige" : "****"
-}, {
-  "productId" : 1,
-  "name" : "Serra de Bancada",
-  "category" : "Pedra",
-  "brand" : "FORTGPRO",
-  "price" : 1800.0,
-  "quantity" : 5,
-  "freeShipping" : true,
-  "prestige" : "****"
-}, {
-  "productId" : 2,
-  "name" : "Furadeira",
-  "category" : "Ferramentas",
-  "brand" : "Black & Decker",
-  "price" : 500.0,
-  "quantity" : 7,
-  "freeShipping" : false,
-  "prestige" : "****"
-}, {
-  "productId" : 3,
-  "name" : "Serra",
-  "category" : "Pedra",
-  "brand" : "FORTGPRO",
-  "price" : 1000.0,
-  "quantity" : 5,
-  "freeShipping" : true,
-  "prestige" : "****"
-}, {
-  "productId" : 4,
-  "name" : "Parafusadeira",
-  "category" : "Ferramentas",
-  "brand" : "Black & Decker",
-  "price" : 500.0,
-  "quantity" : 7,
-  "freeShipping" : false,
-  "prestige" : "****"
-}, {
-  "productId" : 5,
-  "name" : "Serra",
-  "category" : "Pedra",
-  "brand" : "Bosch",
-  "price" : 1000.0,
-  "quantity" : 5,
-  "freeShipping" : true,
-  "prestige" : "****"
-}, {
-  "productId" : 1,
-  "name" : "Serra de Bancada",
-  "category" : "Pedra",
   "brand" : "FORTGPRO",
   "price" : 1800.00,
   "quantity" : 5,
@@ -113,42 +14,60 @@
   "brand" : "Black & Decker",
   "price" : 500.00,
   "quantity" : 7,
-  "freeShipping" : false,
+  "freeShipping" : true,
   "prestige" : "****"
 }, {
-  "productId" : 3,
-  "name" : "Serra",
-  "category" : "Pedra",
+  "productId" : 1,
+  "name" : "Serra de Bancada",
+  "category" : "Ferramentas",
   "brand" : "FORTGPRO",
-  "price" : 1000.00,
+  "price" : 1800.00,
   "quantity" : 5,
   "freeShipping" : true,
   "prestige" : "****"
 }, {
-  "productId" : 4,
-  "name" : "Parafusadeira",
+  "productId" : 2,
+  "name" : "Furadeira",
   "category" : "Ferramentas",
   "brand" : "Black & Decker",
   "price" : 500.00,
   "quantity" : 7,
-  "freeShipping" : false,
+  "freeShipping" : true,
   "prestige" : "****"
 }, {
-  "productId" : 5,
-  "name" : "Serra",
-  "category" : "Pedra",
-  "brand" : "Bosch",
-  "price" : 1000.00,
+  "productId" : 1,
+  "name" : "Serra de Bancada",
+  "category" : "Ferramentas",
+  "brand" : "FORTGPRO",
+  "price" : 1800.00,
   "quantity" : 5,
   "freeShipping" : true,
   "prestige" : "****"
 }, {
-  "productId" : 9,
+  "productId" : 2,
+  "name" : "Furadeira",
+  "category" : "Ferramentas",
+  "brand" : "Black & Decker",
+  "price" : 500.00,
+  "quantity" : 7,
+  "freeShipping" : true,
+  "prestige" : "****"
+}, {
+  "productId" : 1,
   "name" : "Serra de Bancada",
-  "category" : "Pedra",
+  "category" : "Ferramentas",
   "brand" : "FORTGPRO",
   "price" : 1800.00,
   "quantity" : 5,
+  "freeShipping" : true,
+  "prestige" : "****"
+}, {
+  "productId" : 2,
+  "name" : "Furadeira",
+  "category" : "Ferramentas",
+  "brand" : "Black & Decker",
+  "price" : 500.00,
+  "quantity" : 7,
   "freeShipping" : true,
   "prestige" : "****"
 } ]

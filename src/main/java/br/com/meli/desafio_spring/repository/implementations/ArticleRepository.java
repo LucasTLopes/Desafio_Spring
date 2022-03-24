@@ -3,7 +3,7 @@ package br.com.meli.desafio_spring.repository.implementations;
 import br.com.meli.desafio_spring.entity.Article;
 import br.com.meli.desafio_spring.exception.BadRequestException;
 import br.com.meli.desafio_spring.repository.Repository;
-import br.com.meli.desafio_spring.util.FileUtil;
+import br.com.meli.desafio_spring.util.FileArticleUtil;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -14,7 +14,7 @@ public class ArticleRepository implements Repository<Article> {
 
     private final String articlesFileJson = "src/main/resources/articles.json";
 
-    private final FileUtil fileUtil = new FileUtil();
+    private final FileArticleUtil fileUtil = new FileArticleUtil();
 
     public ArticleRepository() {
         articles.addAll(fileUtil.readFromFile(articlesFileJson));

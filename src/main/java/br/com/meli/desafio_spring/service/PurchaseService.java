@@ -4,6 +4,8 @@ package br.com.meli.desafio_spring.service;
 import br.com.meli.desafio_spring.dto.ArticlePurchaseDTO;
 import br.com.meli.desafio_spring.entity.Article;
 import br.com.meli.desafio_spring.entity.Purchase;
+import br.com.meli.desafio_spring.exception.BadRequestException;
+import br.com.meli.desafio_spring.repository.implementations.PurchaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +19,15 @@ public class PurchaseService {
     @Autowired
     private ArticleService articleService;
 
+    @Autowired
+    private PurchaseRepository purchaseRepository;
 
-    public Purchase savePurchase(List <ArticlePurchaseDTO> articlesPurchaseDTO){
+
+    public List<Purchase> savePurchase(List <ArticlePurchaseDTO> articlesPurchaseDTO){
 
         List<Article> articlesList = new ArrayList<>();
+        List<Purchase> purchaseList = new ArrayList<>();
+
 
         checkOperation(articlesPurchaseDTO);
         for (ArticlePurchaseDTO a:articlesPurchaseDTO) {
@@ -28,7 +35,10 @@ public class PurchaseService {
             articlesList.add(new Article(a.getProductId(), article.getName(), article.getCategory(), article.getBrand(), article.getPrice(), a.getQuantity(), article.isFreeShipping(), article.getPrestige()));
         }
 
-        return new Purchase(articlesList);
+        purchaseList.add(new Purchase(articlesList));
+
+        return purchaseRepository.saveAll(purchaseList);
+
     }
 
 
@@ -42,15 +52,13 @@ public class PurchaseService {
                 listIdsError.add(a.getProductId());
                 messageError.add(" ID: " + a.getProductId() + "Nao cadastrado; ");
             }
-            else if (articleService.findByID(a.getProductId()).getQuantity() > a.getQuantity()){
+            else if (articleService.findByID(a.getProductId()).getQuantity() < a.getQuantity()){
                 listIdsError.add(a.getProductId());
                 messageError.add("Quantidade para o ID: " + a.getProductId() + "invalida");
             }
         }
         if (!listIdsError.isEmpty())
-            throw new BadRequestException (messageError);
-
-
+            throw new BadRequestException (messageError.toString());
     }
 
     // Valida se ID exist
