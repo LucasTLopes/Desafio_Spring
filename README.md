@@ -30,7 +30,8 @@ filtering your products; For that, I decided to implement a search engine that,
 of the options that the user determines, returns the product(s) that he
 matches.
 
-Here are some endpoints you can call:
+## ENDPOINTS 
+Here are explication about endpoints you can call:
 
  * [Articles](/docs/Articles.MD)
  * [Purchases](/docs/Purchases.MD)
@@ -40,7 +41,7 @@ Here are some endpoints you can call:
 ### Generic information about system  etc.
 
 ```
-http://localhost:PORT/ping
+/ping
 ```
 
 
