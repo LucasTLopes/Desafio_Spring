@@ -3,6 +3,7 @@ package br.com.meli.desafio_spring.service;
 
 import br.com.meli.desafio_spring.dto.ArticlePurchaseDTO;
 import br.com.meli.desafio_spring.dto.CartDTO;
+import br.com.meli.desafio_spring.dto.PurchaseDTO;
 import br.com.meli.desafio_spring.entity.Article;
 import br.com.meli.desafio_spring.entity.Purchase;
 import br.com.meli.desafio_spring.exception.BadRequestException;
@@ -62,13 +63,12 @@ public class PurchaseService {
             throw new BadRequestException (messageError.toString());
     }
 
-    public List<Purchase> list(){
-        return purchaseRepository.list();
+    public List<PurchaseDTO> list(){
+        return PurchaseDTO.convert(purchaseRepository.list());
     }
 
     public CartDTO getCart(){
-        CartDTO responseCartDTO = new CartDTO(purchaseRepository.list());
-        return responseCartDTO;
+        return new CartDTO(purchaseRepository.list());
     }
 
     // Valida se ID exist
