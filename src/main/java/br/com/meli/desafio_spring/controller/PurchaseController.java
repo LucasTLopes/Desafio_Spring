@@ -1,6 +1,7 @@
 package br.com.meli.desafio_spring.controller;
 
 import br.com.meli.desafio_spring.dto.ArticlePurchaseDTO;
+import br.com.meli.desafio_spring.dto.CartDTO;
 import br.com.meli.desafio_spring.entity.Purchase;
 import br.com.meli.desafio_spring.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,13 @@ public class PurchaseController {
     public ResponseEntity<List <Purchase>> list() {
         return new ResponseEntity(purchaseService.list(), HttpStatus.OK);
     }
+
+    @GetMapping("/api/v1/cart")
+    public ResponseEntity<CartDTO> getCart() {
+        return new ResponseEntity(purchaseService.getCart(), HttpStatus.OK);
+    }
+
+
 
 
 
