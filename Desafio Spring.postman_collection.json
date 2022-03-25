@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "4af0d4af-7345-491f-99b7-a65e896c17b1",
+		"name": "Desafio Spring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Article",
+			"item": [
+				{
+					"name": "Register Articles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n      \"productId\":\"13\",\n      \"name\":\"Serra de Bancada\",\n      \"category\":\"Ferramentas\",\n      \"brand\":\"FORTGPRO\",\n      \"price\":\"1800\",\n      \"quantity\":5,\n      \"freeShipping\":true,\n      \"prestige\":\"****\"\n   },\n   {\n      \"productId\":\"14\",\n      \"name\":\"Nike Air Max + Jordan limited edition\",\n      \"category\":\"Tenis\",\n      \"brand\":\"Nike\",\n      \"price\":\"1.800\",\n      \"quantity\":2,\n      \"freeShipping\":true,\n      \"prestige\":\"*****\"\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/insert-articles-request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"insert-articles-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/articles?freeShipping=true&category=pedra&product=Serra de Bancada&order=5&brand=FORTGPRO",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "freeShipping",
+									"value": "true"
+								},
+								{
+									"key": "category",
+									"value": "pedra"
+								},
+								{
+									"key": "product",
+									"value": "Serra de Bancada"
+								},
+								{
+									"key": "order",
+									"value": "5"
+								},
+								{
+									"key": "brand",
+									"value": "FORTGPRO"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase",
+			"item": [
+				{
+					"name": "Register Purchases",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"productId\":1,\n        \"name\":\"Serra de Bancada\",\n        \"brand\":\"FORTGPRO\",\n        \"quantity\":5\n    },\n    {\n        \"productId\":2,\n        \"name\":\"Furadeira\",\n        \"brand\":\"Black & Decker\",\n        \"quantity\":7\n    }\n]\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/purchase-request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"purchase-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Purchases",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"productId\":1,\n        \"name\":\"Serra de Bancada\",\n        \"brand\":\"FORTGPRO\",\n        \"quantity\":5\n    },\n    {\n        \"productId\":2,\n        \"name\":\"Furadeira\",\n        \"brand\":\"Black & Decker\",\n        \"quantity\":7\n    }\n]\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/purchases",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"purchases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"productId\":1,\n        \"name\":\"Serra de Bancada\",\n        \"brand\":\"FORTGPRO\",\n        \"quantity\":5\n    },\n    {\n        \"productId\":2,\n        \"name\":\"Furadeira\",\n        \"brand\":\"Black & Decker\",\n        \"quantity\":7\n    }\n]\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
