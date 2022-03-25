@@ -1,5 +1,7 @@
 #### 1.0.0 (2022-03-25)
 
+#### 1.0.0 (2022-03-25)
+
 ##### New Features
 
 *  create PurchaseDTO ([d73eb117](https://github.com/olimpioluis/Desafio_Spring/commit/d73eb117726cd1f11aa914dfe82ede6cd323170f))
