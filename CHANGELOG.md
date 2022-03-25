@@ -1,9 +1,7 @@
-#### 1.0.0 (2022-03-25)
-
-#### 1.0.0 (2022-03-25)
+#### 1.1.0 (2022-03-25)
 
 ##### New Features
-
+*  feat: create resource customer ([d1e3b7dd7](https://github.com/olimpioluis/Desafio_Spring/commit/d1e3b7dd74e3750dcd52b990b45469ca8e98f872))
 *  create PurchaseDTO ([d73eb117](https://github.com/olimpioluis/Desafio_Spring/commit/d73eb117726cd1f11aa914dfe82ede6cd323170f))
 *  create endpoint to list cart ([4d036871](https://github.com/olimpioluis/Desafio_Spring/commit/4d036871d46bb95e398e9faf2ecc64a16eda5c5d))
 *  create endpoint to list all purchases ([fcb3b5e6](https://github.com/olimpioluis/Desafio_Spring/commit/fcb3b5e6f961de721d8f183a92c67dd4ccad53ac))
@@ -33,4 +31,3 @@
 *  adjusts on methods name and params ([303ea9b0](https://github.com/olimpioluis/Desafio_Spring/commit/303ea9b09547919ed72150aa643ce010545cb8ff))
 
 #### 1.0.0 (2022-03-25)
-
