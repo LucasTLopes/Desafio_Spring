@@ -13,6 +13,12 @@ Content-Type: application/json
         "brand":"FORTGPRO",
         "quantity":5
     },
+    {
+        "productId":2,
+        "name":"Furadeira",
+        "brand":"Black & Decker",
+        "quantity":7
+    }
 ]
 
 RESPONSE: HTTP 201 (Created)
@@ -22,15 +28,35 @@ Location header: /api/v1/insert-articles-request
 ### Retrieve a Purchases list of articles
 
 ```
-/api/v1/purchases
+GET /api/v1/purchases
 
 [
     {
-        "productId":1,
-        "name":"Serra de Bancada",
-        "brand":"FORTGPRO",
-        "quantity":5
-    },
+        "id": 879,
+        "articles": [
+            {
+                "productId": 1,
+                "name": "Serra de Bancada",
+                "category": "Ferramentas",
+                "brand": "FORTGPRO",
+                "price": 1800,
+                "quantity": 5,
+                "freeShipping": true,
+                "prestige": "****"
+            },
+            {
+                "productId": 2,
+                "name": "Furadeira",
+                "category": "Ferramentas",
+                "brand": "Black & Decker",
+                "price": 500,
+                "quantity": 7,
+                "freeShipping": true,
+                "prestige": "****"
+            }
+        ],
+        "total": 12500
+    }
 ]
 
 

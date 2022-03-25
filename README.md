@@ -35,17 +35,11 @@ Here are explication about endpoints you can call:
 
  * [Articles](/docs/Articles.MD)
  * [Purchases](/docs/Purchases.MD)
- * [Car](./docs/Cars.MD)
+ * [Cart](./docs/Cart.MD)
+ * [Customer](./docs/Customer.MD)
 
 
-### Generic information about system  etc.
-
-```
-/ping
-```
-
-
-#### RELEASE 1.0.0 (2022-03-25)
+### RELEASE 1.0.0 (2022-03-25)
 
 ##### New Features
 
