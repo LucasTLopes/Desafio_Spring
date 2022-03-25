@@ -30,7 +30,6 @@ public class PurchaseService {
         List<Article> articlesList = new ArrayList<>();
         List<Purchase> purchaseList = new ArrayList<>();
 
-
         checkOperation(articlesPurchaseDTO);
         for (ArticlePurchaseDTO a:articlesPurchaseDTO) {
             Article article = articleService.findByID(a.getProductId());
@@ -42,7 +41,6 @@ public class PurchaseService {
         return purchaseRepository.saveAll(purchaseList);
 
     }
-
 
     public void checkOperation(List <ArticlePurchaseDTO> articlesPurchaseDTO){
         List <Long> listIdsError = new ArrayList<>();
@@ -70,8 +68,5 @@ public class PurchaseService {
     public CartDTO getCart(){
         return new CartDTO(purchaseRepository.list());
     }
-
-    // Valida se ID exist
-    // Valida se Quantity
 
 }
