@@ -1,4 +1,45 @@
-#### 1.0.0 (2022-03-25)
+# Spring Boot "Challenge - 1" by "ITB-Two-Factor"
+
+
+The objective of this project is to exercise all the learning acquired during module 1/2 (01/2022) of IT MELI BOOTCAMP
+
+
+## How to Run 
+
+You run it using the ```java -jar``` or the ```mvn spring-boot:run``` commands.
+
+* Clone this repository 
+* Make sure you are using JDK 1.8 and Maven 3.x
+* You can build the project and run the tests by running ```mvn clean package```
+* Once successfully built, you can run the service by one of these two methods:
+```
+       mvn spring-boot:run 
+```
+* Check the stdout on your console to view logs, exceptions  and more 
+
+Once the application runs you should confirm  something like this
+
+```
+http:/localhost:8080/ping
+```
+
+## About the Service
+
+An online product sales platform wants to improve search options and
+filtering your products; For that, I decided to implement a search engine that,
+of the options that the user determines, returns the product(s) that he
+matches.
+
+## ENDPOINTS 
+Here are explication about endpoints you can call:
+
+ * [Articles](/docs/Articles.MD)
+ * [Purchases](/docs/Purchases.MD)
+ * [Cart](./docs/Cart.MD)
+ * [Customer](./docs/Customer.MD)
+
+
+### RELEASE 1.0.0 (2022-03-25)
 
 ##### New Features
 
@@ -32,3 +73,14 @@
 
 #### 1.0.0 (2022-03-25)
 
+
+
+
+# About Spring Boot
+
+Spring Boot is an "opinionated" application bootstrapping framework that makes it easy to create new RESTful services (among other types of applications). It provides many of the usual Spring facilities that can be configured easily usually without any XML. 
+
+
+
+# Questions and Comments:
+     Open a issue on this project 

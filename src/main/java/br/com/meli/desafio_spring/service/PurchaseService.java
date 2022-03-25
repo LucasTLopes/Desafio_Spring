@@ -44,7 +44,6 @@ public class PurchaseService {
         List<Article> articlesList = new ArrayList<>();
         List<Purchase> purchaseList = new ArrayList<>();
 
-
         checkOperation(articlesPurchaseDTO);
         for (ArticlePurchaseDTO a:articlesPurchaseDTO) {
             Article article = articleService.findByID(a.getProductId());
@@ -56,6 +55,7 @@ public class PurchaseService {
         return purchaseRepository.saveAll(purchaseList);
 
     }
+
 
     /**
      * Verifica se todos os elementos da lista de articles informada existem
@@ -98,4 +98,5 @@ public class PurchaseService {
     public CartDTO getCart(){
         return new CartDTO(purchaseRepository.list());
     }
+
 }
