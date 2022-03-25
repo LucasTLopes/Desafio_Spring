@@ -7,6 +7,7 @@ import br.com.meli.desafio_spring.dto.PurchaseDTO;
 import br.com.meli.desafio_spring.entity.Article;
 import br.com.meli.desafio_spring.entity.Purchase;
 import br.com.meli.desafio_spring.exception.BadRequestException;
+import br.com.meli.desafio_spring.repository.implementations.ArticleRepository;
 import br.com.meli.desafio_spring.repository.implementations.PurchaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,16 +16,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Classe Service responsável pelos serviços do recurso purchase
+ */
 @Service
 public class PurchaseService {
-
+    /**
+     * {@link ArticleService Service} de article injetado
+     */
     @Autowired
     private ArticleService articleService;
 
+    /**
+     * {@link PurchaseRepository Repository} de purchase injetado
+     */
     @Autowired
     private PurchaseRepository purchaseRepository;
 
-
+    /**
+     * Cria uma nova purchase com a lista de articles informado
+     *
+     * @param articlesPurchaseDTO   Lista de articles para uma nova purchase
+     * @return                      Purchase criado
+     */
     public List<Purchase> savePurchase(List <ArticlePurchaseDTO> articlesPurchaseDTO){
 
         List<Article> articlesList = new ArrayList<>();
@@ -43,7 +57,11 @@ public class PurchaseService {
 
     }
 
-
+    /**
+     * Verifica se todos os elementos da lista de articles informada existem
+     *
+     * @param articlesPurchaseDTO   Lista de articles informados
+     */
     public void checkOperation(List <ArticlePurchaseDTO> articlesPurchaseDTO){
         List <Long> listIdsError = new ArrayList<>();
         List <String> messageError = new ArrayList<>();
@@ -63,15 +81,21 @@ public class PurchaseService {
             throw new BadRequestException (messageError.toString());
     }
 
+    /**
+     *  Obtém a lista de purchases existentes
+     *
+     * @return  Lista de purchases existentes
+     */
     public List<PurchaseDTO> list(){
         return PurchaseDTO.convert(purchaseRepository.list());
     }
 
+    /**
+     *
+     *
+     * @return
+     */
     public CartDTO getCart(){
         return new CartDTO(purchaseRepository.list());
     }
-
-    // Valida se ID exist
-    // Valida se Quantity
-
 }
