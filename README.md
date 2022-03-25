@@ -6,14 +6,14 @@ The objective of this project is to exercise all the learning acquired during mo
 
 ## How to Run 
 
-You run it using the ```java -jar``` command.
+You run it using the ```java -jar``` or the ```mvn spring-boot:run``` commands.
 
 * Clone this repository 
 * Make sure you are using JDK 1.8 and Maven 3.x
 * You can build the project and run the tests by running ```mvn clean package```
 * Once successfully built, you can run the service by one of these two methods:
 ```
-       Command to run on Terminal ... 
+       mvn spring-boot:run 
 ```
 * Check the stdout on your console to view logs, exceptions  and more 
 
