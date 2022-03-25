@@ -30,8 +30,7 @@ public class ArticleRepository implements Repository<Article> {
 
     }
 
-    @Override
-    public List<Article> list(String category, Boolean freeShipping, String product, String brand, Short order) {
+    public List<Article> list(String category, Boolean  freeShipping, String product, String  brand, Short order) {
         Object[] args = {product, category, brand, freeShipping};
 
         if(Arrays.stream(args).filter(Objects::nonNull).count() > 2) {
@@ -96,7 +95,6 @@ public class ArticleRepository implements Repository<Article> {
         return idsAlreadyExists;
     }
 
-    @Override
     public Article findById(Long id) {
         return articles.stream().filter(article -> article.getProductId().equals(id)).findAny().orElse(null);
     }

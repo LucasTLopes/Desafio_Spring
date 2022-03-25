@@ -19,9 +19,6 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
-    @Autowired
-    private PurchaseService purchaseService;
-
     @PostMapping("/api/v1/insert-articles-request")
     public ResponseEntity<List<ArticleSaveDTO>> save(@RequestBody List<Article> articles) {
         return new ResponseEntity(articleService.saveAll(articles), HttpStatus.CREATED);
@@ -37,10 +34,7 @@ public class ArticleController {
         return new ResponseEntity(articleService.list(category, freeShipping, product, brand, order), HttpStatus.OK);
     }
 
-    @PostMapping("/api/v1/purchase-request")
-    public ResponseEntity<Purchase> list(@RequestBody List<ArticlePurchaseDTO> articles) {
-        return new ResponseEntity(purchaseService.savePurchase(articles), HttpStatus.CREATED);
-    }
+
 
 
 

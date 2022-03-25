@@ -50,16 +50,21 @@ public class PurchaseService {
 
             if(articleService.findByID(a.getProductId()) == null){
                 listIdsError.add(a.getProductId());
-                messageError.add(" ID: " + a.getProductId() + "Nao cadastrado; ");
+                messageError.add(" ID: " + a.getProductId() + " não cadastrado; ");
             }
             else if (articleService.findByID(a.getProductId()).getQuantity() < a.getQuantity()){
                 listIdsError.add(a.getProductId());
-                messageError.add("Quantidade para o ID: " + a.getProductId() + "invalida");
+                messageError.add("quantidade para o ID: " + a.getProductId() + " inválida");
             }
         }
         if (!listIdsError.isEmpty())
             throw new BadRequestException (messageError.toString());
     }
+
+    public List<Purchase> list(){
+        return purchaseRepository.list();
+    }
+
 
     // Valida se ID exist
     // Valida se Quantity
