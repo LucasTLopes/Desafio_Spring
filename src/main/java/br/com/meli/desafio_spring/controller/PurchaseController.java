@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * Classe controlador responsável por lidar com as rotas referentes ao recursp purchase.
+ * Classe controlador responsável por lidar com as rotas referentes ao recurso purchase.
  * Possui rotas para criação e listagem das purchases e consulta do carrinho.
+ * @author Jederson Macedo
+ * @author Igor Nogueira
+ * @author Lucas Troleiz
  */
 @RestController
 public class PurchaseController {

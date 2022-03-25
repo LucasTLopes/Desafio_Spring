@@ -12,6 +12,9 @@ import java.util.List;
 
 /**
  * Classe Service responsável pelos serviços do recurso article
+ * @author Arthur Guedes
+ * @author Luís Felipe Olimpio
+ * @author Jeferson Barbosa
  */
 @Service
 public class ArticleService {

@@ -1,28 +1,38 @@
 package br.com.meli.desafio_spring.service;
 
-import br.com.meli.desafio_spring.dto.ArticlePurchaseDTO;
 import br.com.meli.desafio_spring.dto.CustomerDTO;
-import br.com.meli.desafio_spring.entity.Article;
 import br.com.meli.desafio_spring.entity.Customer;
-import br.com.meli.desafio_spring.entity.Purchase;
 import br.com.meli.desafio_spring.exception.BadRequestException;
 import br.com.meli.desafio_spring.repository.implementations.CustomerRepository;
 import br.com.meli.desafio_spring.repository.implementations.PurchaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
+/**
+ * Classe Service responsável pelos serviços do recurso purchase
+ * @author Jederson Macedo
+ * @author Igor Nogueira
+ * @author Lucas Troleiz
+ */
 @Service
 public class CustomerService {
 
+    /**
+     * {@link CustomerRepository Repository} de customer injetado
+     */
     @Autowired
     private CustomerRepository customerRepository;
 
+    /**
+     * Cria uma novo customer com a lista de customers informado
+     *
+     * @param customers
+     * @return
+     */
     public List<CustomerDTO> saveCustomer(List <Customer> customers){
 
         List<CustomerDTO> customerList = new ArrayList<>();
@@ -34,6 +44,11 @@ public class CustomerService {
 
     }
 
+    /**
+     * Verifica se todos os elementos da lista de customers informada existem
+     *
+     * @param customers
+     */
     public void checkOperation(List <Customer> customers){
         List <Long> listIdsError = new ArrayList<>();
         List <String> messageError = new ArrayList<>();
@@ -57,6 +72,12 @@ public class CustomerService {
             throw new BadRequestException(messageError.toString());
     }
 
+    /**
+     * Retorna uma lista de customers
+     * 
+     * @param state
+     * @return
+     */
     public List<CustomerDTO> getCustomers(String state) {
         if(state == null) return customerRepository.list().stream().map(CustomerDTO::convert).collect(Collectors.toList());
         return customerRepository.list().stream().filter(customer -> customer.getState().equalsIgnoreCase(state)).map(CustomerDTO::convert).collect(Collectors.toList());

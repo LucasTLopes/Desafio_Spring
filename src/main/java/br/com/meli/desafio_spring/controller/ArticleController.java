@@ -18,7 +18,9 @@ import java.util.List;
  *  Classe controlador responsável por lidar com as rotas referentes ao recursp article.
  *  Possui rotas para criação e listagem com filtros e ordenações dos articles.
  *
- * @author
+ * @author Arthur Guedes
+ * @author Luís Felipe Olimpio
+ * @author Jeferson Barbosa
  * */
 @RestController
 public class ArticleController {

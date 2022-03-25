@@ -18,6 +18,9 @@ import java.util.stream.Collectors;
 
 /**
  * Classe Service responsável pelos serviços do recurso purchase
+ * @author Jederson Macedo
+ * @author Igor Nogueira
+ * @author Lucas Troleiz
  */
 @Service
 public class PurchaseService {

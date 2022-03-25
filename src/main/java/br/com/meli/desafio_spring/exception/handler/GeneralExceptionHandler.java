@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
- * Classe ExceptionHandler responsável por lidar com as exceções abaixo listadas.
+ * Classe ExceptionHandler responsável por lidar com as exceções abaixo listadas
+ * @author Luis Felipe Olimpio
+ * @author Arthur Guedes
+ * @author Jeferson Barbosa
  */
 @RestControllerAdvice
 public class GeneralExceptionHandler {
